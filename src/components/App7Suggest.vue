@@ -42,7 +42,7 @@
                     </div>
                     <div class="col-7 d-flex align-items-end flex-column">
                         <button type="button" class="btn btn-primary p-3">
-                            <small v-if="stepNumber<7">بعدی : {{steps[stepNumber]}}</small>
+                            <small v-if="stepNumber<7" @click="print()">بعدی : {{steps[stepNumber]}}</small>
                             <small v-else>پایان</small>
                         </button>
                     </div>
@@ -62,11 +62,17 @@
     export default {
         props: ["stepTitle", "stepNumber"],
         name: "App7Suggest",
-        data () {
+        data() {
             return {
+                content: 'Dariush',
                 e13: 1,
                 activeStep: 1,
-                steps: [ 'تعریف مسئله و سوال های اصلی تحقیق', 'پیشینه پژوهش', 'رویکرد حل مسئله', 'فرضیه ها', 'جنبه جدید بودن و نوآوری', 'روش و ابزارهای لازم', 'لیست مراجع حمایت کننده']
+                steps: ['تعریف مسئله و سوال های اصلی تحقیق', 'پیشینه پژوهش', 'رویکرد حل مسئله', 'فرضیه ها', 'جنبه جدید بودن و نوآوری', 'روش و ابزارهای لازم', 'لیست مراجع حمایت کننده']
+            }
+        },
+        methods: {
+            print() {
+                alert(this.content);
             }
         },
         components: {

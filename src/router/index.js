@@ -8,8 +8,8 @@ import SendProposal from '../views/SendProposal.vue'
 import Form1 from '../views/Form1.vue'
 import Form2 from '../views/Form2.vue'
 import Form3 from '../views/Form3.vue'
-import InputDataComp from "../components/InputDataComp";
-import SuggestionDetails from "../views/SuggestionDetails";
+import Form4 from '../views/Form4.vue'
+import Form5 from '../views/Form5.vue'
 
 Vue.use(VueRouter);
 
@@ -30,6 +30,16 @@ const routes = [
     component: Form1
   },
   {
+    path: '/form4',
+    name: 'Form4',
+    component: Form4
+  },
+  {
+    path: '/form5',
+    name: 'Form5',
+    component: Form5
+  },
+  {
     path: '/proposalform',
     name: 'SendProposal',
     component: SendProposal
@@ -43,16 +53,6 @@ const routes = [
     path: '/home2',
     name: 'Home2',
     component: Home2
-  },
-  {
-    path: '/rostam',
-    name: 'InputDataComp',
-    component: InputDataComp
-  },
-  {
-    path: '/rostam2',
-    name: 'SuggestionDetails',
-    component: SuggestionDetails
   },
   {
     path: '/home',
