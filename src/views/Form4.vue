@@ -43,8 +43,8 @@
                 </div>
                 <div>
                     <div class="bg-white text-center jumbotron mt-5" v-if="arrayData.length === 0">
-                        <img src="../assets/icon_empty_box.png" alt="Logo"/>
-                        <p class="text-center mt-2">هیج منبعی وجود ندارد</p>
+                        <img src="../assets/icon_empty_box_gray.png" alt="Logo"/>
+                        <p class="text-center mt-2 coloring">هیج منبعی وجود ندارد</p>
                     </div>
                     <div class="mb-5" v-else/>
                     <div class="text-center">
@@ -134,13 +134,14 @@
         border: #ee711d solid 1px;
         padding: 20px;
         margin-top: 20px;
+        border-top: #ee711d solid 2px;
     }
 
     .inlineC {
         display: inline;
     }
 
-    .noData {
-        height: 300px;
+    .coloring {
+        color: #666;
     }
 </style>
