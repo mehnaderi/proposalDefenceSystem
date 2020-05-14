@@ -1,153 +1,154 @@
 <template>
-    <div class="container">
+    <div class="mb-5 pb-5">
+        <div class="row container1 mr-0 ml-0">
+            <horizontal-stepper :active-step-number="2">
+            </horizontal-stepper>
+        </div>
         <div class="container align-items-center">
             <div class="row">
                 <div class="col-12 text-center mx-auto my-4">
-                    <ul class="progressbar">
-                        <li class="active">اطلاعات کلی پایان‌نامه</li>
-                        <li>استاد راهنما</li>
-                        <li>اطلاعات پایان‌نامه</li>
-                        <li>فهرست منابع</li>
-                        <li>جدول زمان‌بندی</li>
-                        <li>ثبت و ارسال</li>
-                    </ul>
+                    <h4 class="font-weight-bold">اطلاعات کلی پایان نامه</h4>
                 </div>
-                <div class="col-12 text-center mx-auto my-4">
-                    <h4 class="font-weight-bold">مشخصات استاد راهنما</h4>
-                </div>
-                <div class="col-md-8 col-12 text-left my-sm-1" dir="rtl">
+                <div class="col-10 text-left my-sm-1" dir="rtl">
                     <form>
                         <div class="form-group row">
-                            <label class="col-md-4 col-3 col-form-label">عنوان :</label>
-                            <div class="col-md-8 col-9 pl-5">
-                                <input
-                                        type="text"
-                                        placeholder="جفنگ‌شناسی با شبکه‌های عصبی در آثار هنری"
-                                        class="form-control border border-top-0 border-right-0 border-left-0 rounded-0"
-                                />
+                            <div class="col-25" dir="rtl" align="right">
+                                <label for="titlePersian">عنوان:</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="titlePersian" name="persianTitle" placeholder="عنوان فارسی">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-md-4 col-3 col-form-label">عنوان لاتین :</label>
-                            <div class="col-md-8 col-9 pl-5">
-                                <input
-                                        dir="ltr"
-                                        type="text"
-                                        placeholder="A Neural Network approach for finding bullshit arts"
-                                        class="form-control border border-top-0 border-right-0 border-left-0 rounded-0"
-                                />
+                            <div class="col-25" dir="rtl" align="right">
+                                <label for="titleEnglish">عنوان لاتین:</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="titleEnglish" name="englishTitle" placeholder="عنوان لاتین">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-md-4 col-3 col-form-label">واژگان کلیدی :</label>
-                            <div class="col-md-8 col-9 pl-5">
-                                <input
-                                        type="text"
-                                        class="form-control border border-top-0 border-right-0 border-left-0 rounded-0"
-                                        placeholder="شبکه‌های عصبی، آثار هنری، جفنگ"
-                                />
+                            <div class="col-25" dir="rtl" align="right">
+                                <label for="perKeywords">واژگان کلیدی:</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="perKeywords" name="persianKeywords"
+                                       placeholder="واژگان کلیدی فارسی">
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label class="col-md-4 col-3 col-form-label"> واژگان کلیدی لاتین :</label>
-                            <div class="col-md-8 col-9 pl-5">
-                                <input
-                                        type="text"
-                                        class="form-control border border-top-0 border-right-0 border-left-0 rounded-0"
-                                        placeholder="Neural Network, bullshit, arts"
-                                />
+                            <div class="col-25" dir="rtl" align="right">
+                                <label for="EngKeywords">واژگان کلیدی لاتین:</label>
+                            </div>
+                            <div class="col-75">
+                                <input type="text" id="EngKeywords" name="englishKeywords"
+                                       placeholder="واژگان کلیدی لاتین">
                             </div>
                         </div>
-                        <div class="form-group row">
-                            <label class="col-md-4 col-3 col-form-label"> نوع تحقیق :</label>
-                            <div class="col-md-8 col-9 pl-5">
-                                <input
-                                        type="text"
-                                        class="form-control border border-top-0 border-right-0 border-left-0 rounded-0"
-                                        placeholder="اینجا چی باید بنویسه؟؟؟ علمی؟؟ کاربردی؟؟"
-                                />
+                        <div class="row">
+                            <div class="col-25" dir="rtl" align="right">
+                                <label for="rsType">نوع تحقیق:</label>
+                            </div>
+                            <div class="col-75 customSelect">
+                                <select id="rsType" name="researchType">
+                                    <option selected disabled="true" class="colorGray">انتخاب کنید</option>
+                                    <option value="australia">بنیادی</option>
+                                    <option value="canada">نظری</option>
+                                    <option value="usa">کاربردی</option>
+                                    <option value="usa">توسعه ای</option>
+                                </select>
                             </div>
                         </div>
                     </form>
                 </div>
-                <div class="col-md-4 col-12 text-center py-md-5 my-sm-1 border" dir="rtl">
-                    <p class="text-muted font-weight-bolder py-4 rounded">مرحله ۱ از ۶</p>
-                    <router-link
-                            to="/home"
-                            tag="button"
-                            class="btn btn-info"
-                    >بعدی: جزیئات پیشنهاد
-                    </router-link>
-                    <router-link
-                            to="/home2"
-                            tag="button"
-                            class="btn btn-info mt-3"
-                    >بعدی: صفحه خانه جدید
-                    </router-link>
+            </div>
+        </div>
+        <div class="row justify-content-center mr-0 ml-0">
+            <div class="col-5 mt-5 border-top">
+                <div class="row mt-4">
+                    <div class="col-5 mt-1">
+                        <button type="button" class="btn btn-default p-3 text-secondary">
+                            <span class="fas fa-arrow-left"/><small class="ml-2">بازگشت</small>
+                        </button>
+                    </div>
+                    <div class="col-7 d-flex align-items-end flex-column">
+                        <button type="button" class="btn btn-primary p-3">
+                            <small>بعدی: جزئیات پیشنهاد</small>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </template>
 
+<script>
+    import Vue from 'vue';
+    import HorizontalStepper from '../components/HorizontalStepper';
+
+    Vue.component('horizontalStepper', HorizontalStepper);
+
+
+    export default {
+        name: "Form2"
+    }
+</script>
+
+
 <style scoped>
-    /* .shadow {
-      box-shadow: 0 0.2rem 0.15rem rgba(0, 0, 0, 0.12) !important;
-    } */
 
-    .progressbar {
-        counter-reset: step;
+    * {
+        box-sizing: border-box;
     }
 
-    .progressbar li {
-        list-style-type: none;
-        width: 15%;
-        float: left;
-        font-size: 12px;
-        position: relative;
-        text-align: center;
-        text-transform: uppercase;
-        color: #7d7d7d;
+    .container1 {
+        margin: 0;
     }
 
-    .progressbar li:before {
-        width: 30px;
-        height: 30px;
-        content: counter(step);
-        counter-increment: step;
-        line-height: 30px;
-        border: 2px solid #7d7d7d;
-        display: block;
-        text-align: center;
-        margin: 0 auto 10px auto;
-        border-radius: 50%;
-        background-color: white;
-    }
-
-    .progressbar li:after {
+    input[type=text], select, textarea {
         width: 100%;
-        height: 2px;
+        padding: 12px;
+        border: 1px solid #0099cb;
+        border-radius: 4px;
+        resize: vertical;
+        direction: rtl;
+    }
+
+    label {
+        padding: 12px 12px 12px 12px;
+        display: inline-block;
+        direction: rtl;
+        text-align: right;
+    }
+
+    .col-25 {
+        float: right;
+        width: 25%;
+        margin-top: 6px;
+    }
+
+    .col-75 {
+        float: right;
+        width: 50%;
+        margin-top: 6px;
+        padding-left: 20px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
         content: "";
-        position: absolute;
-        background-color: #7d7d7d;
-        top: 15px;
-        left: -50%;
-        z-index: -1;
+        display: table;
+        clear: both;
     }
 
-    .progressbar li:first-child:after {
-        content: none;
+    .customSelect select {
+        position: relative;
     }
 
-    .progressbar li.active {
-        color: green;
-    }
-
-    .progressbar li.active:before {
-        border-color: #55b776;
-    }
-
-    .progressbar li.active + li:after {
-        background-color: #55b776;
+    @media screen and (max-width: 600px) {
+        .col-25, .col-75, input[type=submit] {
+            width: 100%;
+            margin-top: 0;
+        }
     }
 </style>

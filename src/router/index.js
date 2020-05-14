@@ -5,6 +5,7 @@ import Home2 from '../views/Home2.vue'
 import Start from '../views/Start.vue'
 import Login from '../views/Login.vue'
 import SendProposal from '../views/SendProposal.vue'
+import Form0 from '../views/Form0.vue'
 import Form1 from '../views/Form1.vue'
 import Form2 from '../views/Form2.vue'
 import Form3 from '../views/Form3.vue'
@@ -14,33 +15,38 @@ import Form5 from '../views/Form5.vue'
 Vue.use(VueRouter);
 
 const routes = [
-  {
-    path: '/form3',
-    name: 'Form3',
-    component: Form3
-  },
-  {
-    path: '/form2',
-    name: 'Form2',
-    component: Form2
-  },
-  {
-    path: '/form1',
-    name: 'Form1',
-    component: Form1
-  },
-  {
-    path: '/form4',
-    name: 'Form4',
-    component: Form4
-  },
-  {
-    path: '/form5',
-    name: 'Form5',
-    component: Form5
-  },
-  {
-    path: '/proposalform',
+    {
+        path: '/register/0',
+        name: 'Form0',
+        component: Form0
+    },
+    {
+        path: '/register/1',
+        name: 'Form1',
+        component: Form1
+    },
+    {
+        path: '/register/2',
+        name: 'Form2',
+        component: Form2
+    },
+    {
+        path: '/register/3',
+        name: 'Form3',
+        component: Form3
+    },
+    {
+        path: '/register/4',
+        name: 'Form4',
+        component: Form4
+    },
+    {
+        path: '/register/5',
+        name: 'Form5',
+        component: Form5
+    },
+    {
+        path: '/proposalform',
     name: 'SendProposal',
     component: SendProposal
   },
