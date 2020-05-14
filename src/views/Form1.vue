@@ -4,7 +4,7 @@
             <horizontal-stepper :active-step-number="1">
             </horizontal-stepper>
         </div>
-        <div class="container align-items-center">
+        <div class="container align-items-center container1">
             <div class="row">
                 <div class="col-12 text-center mx-auto my-4">
                     <h4 class="font-weight-bold">مشخصات استاد راهنما</h4>
@@ -28,18 +28,16 @@
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center mt-5 pt-5">
+        <div class="row justify-content-center mt-5 pt-5 mr-0 ml-0">
             <div class="col-5 mt-5 border-top">
                 <div class="row mt-4">
                     <div class="col-5 mt-1">
-                        <button type="button" class="btn btn-default p-3 text-secondary">
-                            <span class="fas fa-arrow-left"/><small class="ml-2">بازگشت</small>
-                        </button>
+                        <router-link to="/register/0" class="btn btn-default p-3 text-secondary"><span
+                                class="fas fa-arrow-left"/><small class="ml-2">بازگشت</small></router-link>
                     </div>
                     <div class="col-7 d-flex align-items-end flex-column">
-                        <button type="button" class="btn btn-primary p-3">
-                            <small>بعدی: اطلاعات پایان نامه</small>
-                        </button>
+                        <router-link to="/register/2" class="btn btn-primary p-3"><small>بعدی: اطلاعات پایان
+                            نامه</small></router-link>
                     </div>
                 </div>
             </div>
@@ -86,6 +84,7 @@
         direction: rtl;
         text-align: right;
     }
+
 
     .col-25 {
         float: right;

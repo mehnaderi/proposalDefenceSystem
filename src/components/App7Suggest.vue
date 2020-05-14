@@ -4,7 +4,7 @@
         <div class="row justify-content-center">
            <div class="col-2"></div>
             <div class="col-7 pr-3 mb-2 mt-1">
-               <p class="text-right pt-4">{{steps[stepNumber-1]}}</p>
+               <p class="text-right pt-4">{{steps[activeStep-1]}}</p>
            </div>
             <div class="col-3"></div>
         </div>
@@ -29,22 +29,33 @@
                 <vue-editor v-model="content"></vue-editor>
             </div>
             <div class="col-3">
-                <stepper :active-step-number="stepNumber"/>
+                <stepper :active-step-number="activeStep"/>
             </div>
         </div>
         <div class="row justify-content-center">
             <div class="col-5 mt-5 border-top">
                 <div class="row mt-4">
-                    <div class="col-5 mt-1">
+                    <div class="col-5 mt-1" v-if="activeStep > 1">
                         <button type="button" class="btn btn-default p-3 text-secondary">
+                            <span @click="prevStep()">
                             <span class="fas fa-arrow-left"/><small class="ml-2">بازگشت</small>
+                            </span>
                         </button>
                     </div>
-                    <div class="col-7 d-flex align-items-end flex-column">
+                    <div class="col-5 mt-1" v-else>
+                        <router-link to="/register/2" class="btn btn-default p-3 text-secondary">
+                            <span class="fas fa-arrow-left"/><small class="ml-2">بازگشت</small>
+                        </router-link>
+                    </div>
+                    <div class="col-7 d-flex align-items-end flex-column" v-if="activeStep<7">
                         <button type="button" class="btn btn-primary p-3">
-                            <small v-if="stepNumber<7" @click="print()">بعدی : {{steps[stepNumber]}}</small>
-                            <small v-else>پایان</small>
+                            <small @click="nextStep()">بعدی : {{steps[activeStep]}}</small>
                         </button>
+                    </div>
+                    <div class="col-7 d-flex align-items-end flex-column" v-else>
+                        <router-link to="/register/4" class="btn btn-primary p-3">
+                            <small>پایان</small>
+                        </router-link>
                     </div>
                 </div>
             </div>
@@ -71,8 +82,11 @@
             }
         },
         methods: {
-            print() {
-                alert(this.content);
+            nextStep() {
+                this.activeStep++;
+            },
+            prevStep() {
+                this.activeStep--;
             }
         },
         components: {

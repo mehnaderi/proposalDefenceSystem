@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Home2 from '../views/Home2.vue'
 import Start from '../views/Start.vue'
 import Login from '../views/Login.vue'
 import SendProposal from '../views/SendProposal.vue'
@@ -15,6 +14,11 @@ import Form5 from '../views/Form5.vue'
 Vue.use(VueRouter);
 
 const routes = [
+    {
+        path: '/',
+        name: 'Start',
+        component: Start
+    },
     {
         path: '/register/0',
         name: 'Form0',
@@ -46,31 +50,21 @@ const routes = [
         component: Form5
     },
     {
+        path: '/home',
+        name: 'Home',
+        component: Home
+    },
+    {
         path: '/proposalform',
-    name: 'SendProposal',
-    component: SendProposal
-  },
-  {
-    path: '/login',
-    name: 'Login',
-    component: Login
-  },
-  {
-    path: '/home2',
-    name: 'Home2',
-    component: Home2
-  },
-  {
-    path: '/home',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/',
-    name: 'Start',
-    component: Start
-  },
-  {
+        name: 'SendProposal',
+        component: SendProposal
+    },
+    {
+        path: '/login',
+        name: 'Login',
+        component: Login
+    },
+    {
     path: '/about',
     name: 'About',
     // route level code-splitting

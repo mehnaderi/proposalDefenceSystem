@@ -50,14 +50,14 @@
             <div class="col-5 mt-5 border-top">
                 <div class="row mt-4">
                     <div class="col-5 mt-1">
-                        <button type="button" class="btn btn-default text-secondary">
+                        <router-link to="/register/4" class="btn btn-default p-3 text-secondary">
                             <span class="fas fa-arrow-left"/><small class="ml-2">بازگشت</small>
-                        </button>
+                        </router-link>
                     </div>
                     <div class="col-7 d-flex align-items-end flex-column">
-                        <button type="button" class="btn btn-primary">
+                        <router-link to="/home" class="btn btn-primary">
                             <small>پایان</small>
-                        </button>
+                        </router-link>
                     </div>
                 </div>
             </div>

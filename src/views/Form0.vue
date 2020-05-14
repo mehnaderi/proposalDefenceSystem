@@ -32,9 +32,8 @@
                         </p>
                     </div>
                     <div class="text-center">
-                        <button type="button" class="btn btn-primary pr-3 pl-3" v-on:click="adding()">
-                            <small>شروع</small>
-                        </button>
+                        <router-link to="/register/1" class="btn btn-primary pr-3 pl-3"><small>شروع</small>
+                        </router-link>
                     </div>
                 </div>
             </div>
