@@ -3,7 +3,6 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Start from '../views/Start.vue'
 import Login from '../views/Login.vue'
-import SendProposal from '../views/SendProposal.vue'
 import Form0 from '../views/Form0.vue'
 import Form1 from '../views/Form1.vue'
 import Form2 from '../views/Form2.vue'
@@ -12,14 +11,16 @@ import Form4 from '../views/Form4.vue'
 import Form5 from '../views/Form5.vue'
 
 import store from '../store/store'
+import RefereeResults from "../views/RefereeResults";
+import Masters from "../views/Masters";
 
 Vue.use(VueRouter);
 
 const routes = [{
-        path: '/',
-        name: 'Start',
-        component: Start
-    },
+    path: '/',
+    name: 'Start',
+    component: Start
+},
     {
         path: '/register/0',
         name: 'Form0',
@@ -105,21 +106,19 @@ const routes = [{
         }
     },
     {
-        path: '/proposalform',
-        name: 'SendProposal',
-        component: SendProposal,
-        beforeEnter: (to, from, next) => {
-            if (store.state.token) {
-                next()
-            } else {
-                next('/login')
-            }
-        }
-    },
-    {
         path: '/login',
         name: 'Login',
         component: Login
+    },
+    {
+        path: '/results',
+        name: 'RefereeResult',
+        component: RefereeResults
+    },
+    {
+        path: '/masters',
+        name: 'Masters',
+        component: Masters
     },
     {
         path: '/about',
