@@ -40,16 +40,14 @@
                   type="password"
                   class="form-control border border-top-0 border-right-0 border-left-0 rounded-0"
                 />
-                <!-- <div>{{$v.password}}</div> -->
+                <!-- <div>{{$v.password.required}}</div> -->
               </div>
             </div>
             <!-- اگه کاربر ثبت نام نکرده بود میره صفحه ثبت وگرنه میره صفحه خانه -->
-            <!-- <router-link
-              to="/proposalform"
-              type="submit"
+            <button
               class="btn btn-outline-secondary my-auto"
-            >ورود</router-link>-->
-            <button :disabled="$v.$error">go</button>
+              :disabled="$v.$error | !$v.email.required | !$v.password.required"
+            >ورود</button>
           </form>
         </div>
         <div class="col-12 pt-md-3 text-muted">
@@ -64,8 +62,6 @@
 
 <script>
 import { required, email, minLength } from "vuelidate/lib/validators";
-// import axios from "axios-auth";
-import axios from "axios";
 export default {
   data() {
     return {
@@ -87,32 +83,10 @@ export default {
     onSubmit() {
       const formData = {
         email: this.email,
-        password: this.password
+        password: this.password,
+        api: "/login"
       };
-
-      axios
-        .post("http://127.0.0.1:5000/api/signup", {
-          email: formData.email,
-          password: formData.password,
-          // returnSecureToken: true
-          is_prof: false
-        })
-        .then(res => {
-          // console.log(res);
-          const item = res.data.result;
-          if (item.email === this.email) {
-            this.$router.push("/proposalform");
-          } else {
-            console.log("Login in Error");
-          }
-          // const data = res.data;
-          // for (let key in data) {
-          //   console.log(key);
-          //   let item = data[key];
-          //   this.dataFromServer = item.email;
-          // }
-        });
-      // .then(error => console.log(error));
+      this.$store.dispatch("asyncGetUserInfo", formData);
     }
   }
 };
