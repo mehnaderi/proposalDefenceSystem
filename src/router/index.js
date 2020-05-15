@@ -9,13 +9,6 @@ import Form2 from '../views/Form2.vue'
 import Form3 from '../views/Form3.vue'
 import Form4 from '../views/Form4.vue'
 import Form5 from '../views/Form5.vue'
-
-<<<<<<< HEAD
-// import {store} from '../store/store'
-import SendProposal from '../views/SendProposal.vue'
-=======
-import store from '../store/store'
->>>>>>> 5e5a00213e8b8fc101e08c0489aac9781ecaacc1
 import RefereeResults from "../views/RefereeResults";
 import Masters from "../views/Masters";
 import ToDoPage from "../views/ToDoPage";
@@ -23,10 +16,10 @@ import ToDoPage from "../views/ToDoPage";
 Vue.use(VueRouter);
 
 const routes = [{
-    path: '/',
-    name: 'Start',
-    component: Start
-},
+        path: '/',
+        name: 'Start',
+        component: Start
+    },
     {
         path: '/register/0',
         name: 'Form0',
@@ -114,25 +107,6 @@ const routes = [{
         // }
     },
     {
-<<<<<<< HEAD
-        path: '/proposalform',
-        name: 'SendProposal',
-        component: SendProposal,
-        // beforeEnter: (to, from, next) => {
-        //     // console.log(store.state.user);
-        //     // console.log(store.state.user.token);
-        //     console.log('index.js > login to proposalform');
-
-        //     if (store.state.user.token) {
-        //         next()
-        //     } else {
-        //         next('/login')
-        //     }
-        // }
-    },
-    {
-=======
->>>>>>> 5e5a00213e8b8fc101e08c0489aac9781ecaacc1
         path: '/login',
         name: 'Login',
         component: Login

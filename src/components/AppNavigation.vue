@@ -60,7 +60,6 @@
 </template>
 
 <style scoped>
-<<<<<<< HEAD
 #navbarCollapse > ul > li > a {
   color: rgb(0, 153, 204);
 }
@@ -96,41 +95,3 @@
   font-size: 18px;
 }
 </style>
-=======
-  #navbarCollapse > ul > li > a {
-    color: rgb(0, 153, 204);
-  }
-
-  .shadow {
-    box-shadow: 0 0.15rem 0.2rem rgba(0, 0, 0, 0.15) !important;
-  }
-
-  .navItemInner {
-    color: black !important;
-    transition: color, background-color 100ms;
-    border-radius: 3px;
-  }
-
-  #mainPage:hover, #toDo:hover, #mainPage:active, #toDo:active {
-    color: #0099cb !important;
-    transition: color 100ms;
-    background-color: #eeeeee;
-  }
-
-  #refereeResult:hover, #refereeResult:active {
-    color: #ee711d !important;
-    transition: color, background-color 100ms;
-    background-color: #eeeeee;
-  }
-
-  #masters:hover, #masters:active {
-    color: #1cbabd !important;
-    transition: color, background-color 100ms;
-    background-color: #eeeeee;
-  }
-
-  .sizeLarge {
-    font-size: 18px;
-  }
-</style>
->>>>>>> 5e5a00213e8b8fc101e08c0489aac9781ecaacc1

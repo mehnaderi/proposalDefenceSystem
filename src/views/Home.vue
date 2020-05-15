@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
   <div>
     <div class="row container1">
       <horizontal-stepper-home :active-step-number="2"></horizontal-stepper-home>
@@ -13,86 +12,6 @@
                 <div class="row text-right font-weight-bold centerTODO text-info">
                   <p class="inlineMode fas fa-calendar-check customFontSize"></p>
                   <p class="inlineMode mr-2">برای انجام دادن</p>
-=======
-    <div>
-        <div class="row container1">
-            <horizontal-stepper-home :active-step-number="2">
-            </horizontal-stepper-home>
-        </div>
-        <div class="container container-fluid px-5 mt-5">
-            <div class="row ml-0 mr-0">
-                <div class="col-6 px-5">
-                    <div class="row justify-content-center">
-                        <div class="col-12 p-0">
-                            <div dir="rtl">
-                                <div class="row text-right font-weight-bold centerTODO text-info">
-                                    <p class="inlineMode fas fa-calendar-check customFontSize"></p>
-                                    <p class="inlineMode mr-2">برای انجام دادن</p>
-                                </div>
-                                <!-- <p class="text-left">برای انجام دادن</p> -->
-                                <div id="frst" class="card-body shadow">
-                                    <div class="custom-control custom-checkbox">
-                                        <input
-                                                type="checkbox"
-                                                class="custom-control-input"
-                                                id="customCheck1"
-                                                disabled
-                                                checked
-                                        />
-                                        <label class="custom-control-label text-right pl-5 ml-3" for="customCheck1">
-                                            <span>لطفا این موارد را در پروپوزال خود رعایت کنید.</span>
-                                        </label>
-                                        <div class="text-right text-muted pr-4 small mt-2">
-                                            <span class="small">۳ روز پیش ...</span>
-                                        </div>
-                                    </div>
-                                    <div class="border border-top-0 border-left-0 border-right-0 my-3"></div>
-                                    <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="customCheck2"/>
-                                        <label class="custom-control-label text-right pl-5 ml-3" for="customCheck2">
-                                            <span>لطفا این موارد را در پروپوزال خود رعایت کنید.</span>
-                                        </label>
-                                        <br/>
-                                        <div class="text-right pr-4 small mt-2">
-                                            <span class="small">۱ روز پیش ...</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-6 px-5">
-                    <div class="row justify-content-center">
-                        <div class="col-12 p-0">
-                            <div dir="rtl">
-                                <div class="row text-right font-weight-bold center">
-                                    <p class="inlineMode fas fa-pen-square  customFontSize"></p>
-                                    <p class="inlineMode mr-2">پروپوزال</p>
-                                </div>
-                                <div id="nxt" class="card-body shadow border">
-                                    <p
-                                            class="text-center small py-md-4"
-                                    >برای ویرایش پروپوزال خود بر روی دکمه‌ی ویرایش و برای دریافت آن بر روی دانلود کلیک
-                                        کنید!</p>
-                                    <div class="row">
-                                        <div class="col-12 text-center">
-                                            <router-link to="/register/0" class="btn colorSet ml-4">
-                                                <i class="fas fa-edit"></i>
-                                                <span class="small mr-2">ویرایش پروپوزال</span>
-                                            </router-link>
-                                            <button type="button" class="btn colorSet">
-                                                <i class="fas fa-download"></i>
-                                                <span class="small  mr-2">دانلود پروپوزال شما</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
->>>>>>> 5e5a00213e8b8fc101e08c0489aac9781ecaacc1
                 </div>
                 <!-- <p class="text-left">برای انجام دادن</p> -->
                 <div id="frst" class="card-body shadow">
