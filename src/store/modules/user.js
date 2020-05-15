@@ -21,17 +21,36 @@ const getters = {
 };
 
 const mutations = {
-    setUserInfo: state => {
-        console.log("Darush");
-
-        state.email = "Darush"
-    }
+    setUserInfo: (state, token) => {
+        console.log("mutations > setUserInfo() - login");
+        // console.log(token);
+        state.token = token
+    },
+    clearAuthData(state) {
+        state.token = null
+    },
+    //todo
+    // authUser(state, userData) {
+    //     state.token = userData.token
+    //     state.userId = userData.userId
+    // },
+    // storeUser(state, user) {
+    //     state.user = user
+    // },
 };
 
 // for Asyncronous actions
 const actions = {
-    asyncGetUserInfo: ({
+    setLogoutTimer({
         commit
+    }, expirationTime) {
+        setTimeout(() => {
+            commit('clearAuthData')
+        }, expirationTime * 1000)
+    },
+    asyncGetUserInfo: ({
+        commit,
+        dispatch
     }, data) => {
         axios
             .post(data.api, {
@@ -44,10 +63,16 @@ const actions = {
                 // p.mo@gmail.co
                 console.log(res);
 
+                const now = new Date()
+                const expirationDate = new Date(now.getTime() + 3600 * 1000) //1 hour
+                localStorage.setItem('token', res.data.token)
+                localStorage.setItem('expirationDate', expirationDate)
+
                 const token = res.data.token;
                 if (token !== undefined) {
-                    commit('setUserInfo')
-                    router.push("/proposalform");
+                    commit('setUserInfo', token)
+                    dispatch('setLogoutTimer', 3600)
+                    router.push(data.to);
                 } else {
                     console.log("Login in Error");
                     alert("خطا در ورودی به سیستم")
@@ -58,10 +83,19 @@ const actions = {
                     console.log(error);
                 }
             });
-    }
+    },
+    logout({
+        commit
+    }) {
+        commit('clearAuthData')
+        localStorage.removeItem('expirationDate')
+        localStorage.removeItem('token')
+        router.replace('/signin')
+    },
     // TODO:
     // signup
     // login
+    //logout
     // forget password
 
     // axios.post(url, {

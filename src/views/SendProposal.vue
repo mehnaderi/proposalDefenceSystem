@@ -4,7 +4,7 @@
       <div class="row py-sm-5 my-sm-5">
         <div class="col-8 text-center py-sm-5 my-sm-5" dir="rtl">
           <p class="font-weight-bold">برای شروع فرآیند ثبت پروپوزال بر روی دکمه‌ی زیر کلیک کنید!</p>
-          <router-link to="/form1" type="button" name id class="btn btn-success mt-4">شروع</router-link>
+          <router-link to="/register/1" type="button" name id class="btn btn-success mt-4">شروع</router-link>
         </div>
         <div class="col-4 border text-center py-sm-5 my-sm-5" dir="rtl">
         <span>

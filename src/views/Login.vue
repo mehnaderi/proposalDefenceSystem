@@ -84,7 +84,8 @@ export default {
       const formData = {
         email: this.email,
         password: this.password,
-        api: "/login"
+        api: "/login",
+        to: "/register/0"
       };
       this.$store.dispatch("asyncGetUserInfo", formData);
     }
