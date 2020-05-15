@@ -63,10 +63,10 @@
                                         کنید!</p>
                                     <div class="row">
                                         <div class="col-12 text-center">
-                                            <button type="button" class="btn colorSet ml-4">
+                                            <router-link to="/register/0" class="btn colorSet ml-4">
                                                 <i class="fas fa-edit"></i>
                                                 <span class="small mr-2">ویرایش پروپوزال</span>
-                                            </button>
+                                            </router-link>
                                             <button type="button" class="btn colorSet">
                                                 <i class="fas fa-download"></i>
                                                 <span class="small  mr-2">دانلود پروپوزال شما</span>

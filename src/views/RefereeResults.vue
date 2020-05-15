@@ -19,10 +19,10 @@
                 </div>
 
             </div>
-            <div class="row font-weight-bold centerTODO colorWhite btn btn-primary mt-2" dir="rtl">
+            <router-link to="/todo" class="row font-weight-bold centerTODO colorWhite btn btn-primary mt-2" dir="rtl">
                 <p class="inlineMode fas fa-calendar-check customFontSize mr-1 ml-2"></p>
                 <p class="inlineMode mt-1">برای انجام دادن</p>
-            </div>
+            </router-link>
 
         </div>
     </div>

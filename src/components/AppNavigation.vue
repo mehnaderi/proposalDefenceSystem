@@ -44,9 +44,9 @@
             </router-link>
           </li>
           <li class="navbar-item">
-            <a href="#" id="toDo" class="nav-link ml-3 navItemInner">
+            <router-link id="toDo" to="/todo" class="nav-link ml-3 navItemInner">
               <span class="fas fa-calendar-check p-2 sizeLarge"></span>برای انجام دادن
-            </a>
+            </router-link>
           </li>
           <li class="navbar-item">
             <a href="#" id="masters" class="nav-link ml-3 navItemInner">

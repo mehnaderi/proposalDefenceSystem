@@ -13,6 +13,7 @@ import Form5 from '../views/Form5.vue'
 import store from '../store/store'
 import RefereeResults from "../views/RefereeResults";
 import Masters from "../views/Masters";
+import ToDoPage from "../views/ToDoPage";
 
 Vue.use(VueRouter);
 
@@ -119,6 +120,11 @@ const routes = [{
         path: '/masters',
         name: 'Masters',
         component: Masters
+    },
+    {
+        path: '/todo',
+        name: 'ToDoPage',
+        component: ToDoPage
     },
     {
         path: '/about',
