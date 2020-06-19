@@ -13,11 +13,16 @@ const state = {
 
 const getters = {
     // getUserInfo: state => {
-    //     return ''
+    //     return state.token
     // },
-    // getToken: state => {
-    //     return ''
-    // },
+    getToken: state => {
+        if (state.token == undefined) {
+            return false
+
+        } else {
+            return true
+        }
+    },
 };
 
 const mutations = {

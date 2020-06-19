@@ -4,7 +4,7 @@
       <AppNavigation></AppNavigation>
       <router-view></router-view>
     </div>
-      <app-footer></app-footer>
+    <app-footer></app-footer>
   </div>
 </template>
 <script>
@@ -13,7 +13,7 @@ import AppFooter from "../src/components/AppFooter";
 export default {
   components: {
     AppNavigation,
-    AppFooter,
+    AppFooter
   }
 };
 </script>

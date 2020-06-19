@@ -64,12 +64,17 @@
                     <div class="col-12 text-center">
                       <router-link to="/register/0" class="btn colorSet ml-4">
                         <i class="fas fa-edit"></i>
-                        <span class="small mr-2">ویرایش پروپوزال</span>
+                        <span class="mr-2">ویرایش پروپوزال</span>
                       </router-link>
-                      <button type="button" class="btn colorSet">
-                        <i class="fas fa-download"></i>
-                        <span class="small mr-2">دانلود پروپوزال شما</span>
-                      </button>
+                      <span class="small">
+                        <a
+                          :href="item.url"
+                          v-text="item.text"
+                          @click.prevent="downloadItem()"
+                          type="button"
+                          class="btn colorSet"
+                        />
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -127,16 +132,38 @@
 
 <script>
 import Vue from "vue";
+import axios from "axios";
 import HorizontalStepperHome from "../components/HorizontalStepperHome";
 Vue.component("horizontalStepperHome", HorizontalStepperHome);
 export default {
+  name: "Home",
   data() {
     return {
       parameters: 0,
-      arrayData: []
+      arrayData: [],
+      item: {
+        url: "http://127.0.0.1:5000/api/get_student_guide_file",
+        text: " دانلود پروپوزال شما"
+      }
     };
   },
-  name: "Home"
+  methods: {
+    downloadItem() {
+      axios
+        .get(this.item.url, {
+          responseType: "pdf"
+        })
+        .then(response => {
+          const blob = new Blob([response.data], { type: "application/pdf" });
+          const link = document.createElement("a");
+          link.href = URL.createObjectURL(blob);
+          link.download = this.item.text;
+          link.click();
+          URL.revokeObjectURL(link.href);
+        })
+        .catch(console.error);
+    }
+  }
 };
 </script>
 

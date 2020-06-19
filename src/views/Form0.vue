@@ -12,9 +12,13 @@
                   آن فیلد ها را پر کنید!
                 </p>
                 <div class="text-center">
-                  <button type="button" class="btn btnDownload pr-4 pl-4" v-on:click="adding()">
-                    <small>دانلود</small>
-                  </button>
+                  <a
+                    :href="item.url"
+                    v-text="item.text"
+                    @click.prevent="downloadItem()"
+                    type="button"
+                    class="btn btnDownload pr-4 pl-4"
+                  />
                 </div>
               </div>
             </div>
@@ -45,13 +49,19 @@
 
 <script>
 import Vue from "vue";
+import axios from "axios";
 import HorizontalStepper from "../components/HorizontalStepper";
 Vue.component("horizontalStepper", HorizontalStepper);
 export default {
+  name: "Form0",
   data() {
     return {
       parameters: 0,
-      arrayData: []
+      arrayData: [],
+      item: {
+        url: "http://127.0.0.1:5000/api/get_student_guide_file",
+        text: "دانلود"
+      }
     };
   },
   methods: {
@@ -64,14 +74,22 @@ export default {
         link: ""
       });
     },
-    deleteThisItem(param) {
-      // alert(param);
-      // this.arrayData.splice(this.arrayData.indexOf(param), 1);
-      this.arrayData.splice(param, 1);
-      // this.arrayData = this.arrayData[param].remove();
+    downloadItem() {
+      axios
+        .get(this.item.url, {
+          responseType: "pdf"
+        })
+        .then(response => {
+          const blob = new Blob([response.data], { type: "application/pdf" });
+          const link = document.createElement("a");
+          link.href = URL.createObjectURL(blob);
+          link.download = this.item.text;
+          link.click();
+          URL.revokeObjectURL(link.href);
+        })
+        .catch(console.error);
     }
-  },
-  name: "Form0"
+  }
 };
 </script>
 
