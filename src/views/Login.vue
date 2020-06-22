@@ -45,8 +45,8 @@
             </div>
             <!-- اگه کاربر ثبت نام نکرده بود میره صفحه ثبت وگرنه میره صفحه خانه -->
             <button
-              class="btn btn-outline-secondary my-auto"
-              :disabled="$v.$error | !$v.email.required | !$v.password.required"
+                    class="btn btn-outline-secondary my-auto"
+                    :disabled="$v.$error || !$v.email.required || !$v.password.required"
             >ورود</button>
           </form>
         </div>
