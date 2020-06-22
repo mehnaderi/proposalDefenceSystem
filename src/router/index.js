@@ -15,6 +15,7 @@ import ToDoPage from "../views/ToDoPage";
 import MasterHome from "../views/MasterHome";
 import StudentItemLayout from "../components/StudentPageItemLayout";
 import navStudents from "../views/NavStudents";
+import navReferee from "../views/NavAppointReferees";
 
 Vue.use(VueRouter);
 
@@ -153,6 +154,18 @@ const routes = [{
         path: '/navStudents',
         name: 'navStudents',
         component: navStudents,
+        // beforeEnter: (to, from, next) => {
+        //     if (store.state.user.token) {
+        //         next()
+        //     } else {
+        //         next('/login')
+        //     }
+        // }
+    },
+    {
+        path: '/AppointReferee',
+        name: 'navReferee',
+        component: navReferee,
         // beforeEnter: (to, from, next) => {
         //     if (store.state.user.token) {
         //         next()

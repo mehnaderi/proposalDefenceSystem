@@ -6,7 +6,7 @@
                 <div>
                     <p class="text-right colorBlue h6 font-weight-bold">به عنوان استاد راهنما</p>
                     <div class="splitter mb-3"/>
-                    <student-page-item-layout/>
+                    <student-page-item-layout is-edited="true"/>
                     <student-page-item-layout/>
                 </div>
             </div>
@@ -18,9 +18,9 @@
                 <div>
                     <p class="text-right colorBlue h6 font-weight-bold">به عنوان استاد داور</p>
                     <div class="splitter mb-3"/>
+                    <student-page-item-layout is-edited="true"/>
                     <student-page-item-layout/>
-                    <student-page-item-layout/>
-                    <student-page-item-layout/>
+                    <student-page-item-layout is-edited="true"/>
                     <student-page-item-layout/>
                 </div>
             </div>

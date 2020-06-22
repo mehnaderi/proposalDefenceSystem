@@ -6,7 +6,8 @@
                 <div class="col-8" dir="rtl">
                     <p class="text-right p-0 m-0">مجتبی ترابی</p>
                 </div>
-                <div class="btn bgColor col-3">اصلاحات جدید اعمال شده</div>
+                <div class="btn bgColor col-3" v-if="isEdited">اصلاحات جدید اعمال شده</div>
+                <div class="btn blColor col-3" v-else>در انتظار انجام اصلاحات</div>
             </div>
         </div>
         <div v-else class="row container1 p-4 bgGray shadow mr-2 ml-2 mb-3" dir="rtl">
@@ -19,15 +20,19 @@
                         <p class="col-12 text-right p-0 m-0 small">شماره دانشجویی: 95243063</p>
                     </div>
                 </div>
-                <div class="btn bgColor col-3">اصلاحات جدید اعمال شده</div>
+                <div class="btn bgColor col-3" v-if="isEdited">اصلاحات جدید اعمال شده</div>
+                <div class="btn blColor col-3" v-else>در انتظار انجام اصلاحات</div>
             </div>
             <div class="row container1 col-12" dir="rtl">
                 <div class="col-9 mt-5 ">
                     <div class="row container1 col-12 centerItem">
                         <div class="row col-11 bgWhite shadow container1" dir="rtl">
                             <div class="col-7 centerItem">
-                                <p class="font-weight-bold colorOrange text-center">برای تایید و یا عدم تایید کردن
+                                <p class="font-weight-bold colorOrange text-center" v-if="isEdited">برای تایید و یا عدم
+                                    تایید کردن
                                     اصلاحات دانشجویان می بایست اول پروپووزال دانشجو را مشاهده کنید.</p>
+                                <p class="font-weight-bold colorOrange text-center" v-else>دانشجو هنوز اصلاحات لازم را
+                                    ارسال نکرده است</p>
                             </div>
                             <div class="col-5 mt-4 mb-4 text-center">
                                 <router-link to="#" class="btn colorSet">
@@ -60,8 +65,10 @@
 <script>
     export default {
         name: "StudentPageItemLayout",
+        props: ["isEdited"],
         data() {
             return {
+
                 isExpanded: false
             }
         },
@@ -147,5 +154,10 @@
 
     .changeTransition {
         transition: all 1s;
+    }
+
+    .blColor {
+        color: #0099cb;
+        border: 1px solid #0099cb;
     }
 </style>

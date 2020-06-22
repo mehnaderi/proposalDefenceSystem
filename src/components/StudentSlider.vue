@@ -1,5 +1,5 @@
 <template>
-    <div class="row mt-2 mb-2 studentView p-3 container1" dir="rtl" v-if="inputArr.length > 0">
+    <div class="row mt-2 mb-2 studentView p-3 container1 w-100" dir="rtl" v-if="inputArr.length > 0">
         <span class="fas fa-chevron-circle-right col-1 centerItem container1" @click="goToRight()"/>
         <div v-if="counter < inputArr.length" class="col-5 container1">
             <student-item-layout v-bind:student-name="inputArr[counter]" student-field="sdasd"

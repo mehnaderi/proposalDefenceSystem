@@ -47,7 +47,7 @@
                                                 <i class="fas fa-edit"></i>
                                                 <span class="mr-2">ویرایش زمان حضور</span>
                                             </router-link>
-                                            <router-link to="/register/0" class="btn colorSet ml-4">
+                                            <router-link to="/AppointReferee" class="btn colorSet ml-4">
                                                 <i class="fas fa-user-plus"></i>
                                                 <span class="mr-2">انتخاب داوران</span>
                                             </router-link>
