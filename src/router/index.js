@@ -13,9 +13,12 @@ import RefereeResults from "../views/RefereeResults";
 import Masters from "../views/Masters";
 import ToDoPage from "../views/ToDoPage";
 import MasterHome from "../views/MasterHome";
-import StudentItemLayout from "../components/StudentPageItemLayout";
+import StudentItemLayout from "../components/RefereeProposalItem";
 import navStudents from "../views/NavStudents";
-import navReferee from "../views/NavAppointReferees";
+import navReferee from "../views/AppointReferees";
+import navReferee1 from "../views/NavReferee";
+import SendRefereePage from "../views/SendRefereePage";
+import SendRefereeManagerPage from "../views/SendRefereeManagerPage";
 
 Vue.use(VueRouter);
 
@@ -166,6 +169,42 @@ const routes = [{
         path: '/AppointReferee',
         name: 'navReferee',
         component: navReferee,
+        // beforeEnter: (to, from, next) => {
+        //     if (store.state.user.token) {
+        //         next()
+        //     } else {
+        //         next('/login')
+        //     }
+        // }
+    },
+    {
+        path: '/navReferee',
+        name: 'navReferee1',
+        component: navReferee1,
+        // beforeEnter: (to, from, next) => {
+        //     if (store.state.user.token) {
+        //         next()
+        //     } else {
+        //         next('/login')
+        //     }
+        // }
+    },
+    {
+        path: '/SendRefereePage',
+        name: 'SendRefereePage',
+        component: SendRefereePage,
+        // beforeEnter: (to, from, next) => {
+        //     if (store.state.user.token) {
+        //         next()
+        //     } else {
+        //         next('/login')
+        //     }
+        // }
+    },
+    {
+        path: '/SendRefereeManagerPage',
+        name: 'SendRefereeManagerPage',
+        component: SendRefereeManagerPage,
         // beforeEnter: (to, from, next) => {
         //     if (store.state.user.token) {
         //         next()

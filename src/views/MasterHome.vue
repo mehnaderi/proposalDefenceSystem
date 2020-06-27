@@ -9,16 +9,26 @@
                     <div class="row justify-content-center">
                         <div class="col-12 p-0">
                             <div dir="rtl">
-                                <div class="row text-right font-weight-bold centerTODO text-info">
+                                <div class="row  font-weight-bold centerTODO text-info" dir="rtl">
                                     <p class="inlineMode fas fa-calendar-check customFontSize"></p>
                                     <p class="inlineMode mr-2">جلسه داوری</p>
+                                    <router-link to="#" v-if="this.refereeList.length > 2">
+                                        <span class="inlineModeLeft ml-2">بیشتر</span>
+                                    </router-link>
                                 </div>
                                 <!-- <p class="text-left">برای انجام دادن</p> -->
                                 <div id="frst" class="card-body shadow pt-1 pb-1">
                                     <div v-if="this.refereeList.length > 0">
                                         <referee-item-layout/>
-                                        <div class="border border-top-0 border-left-0 border-right-0 my-2"></div>
-                                        <referee-item-layout/>
+                                        <div v-if="this.refereeList.length > 1">
+                                            <div class="border border-top-0 border-left-0 border-right-0 my-2"></div>
+                                            <referee-item-layout/>
+                                        </div>
+                                        <div v-else>
+                                            <div style="visibility: hidden"
+                                                 class="border border-top-0 border-left-0 border-right-0 my-2"/>
+                                            <referee-item-layout style="visibility: hidden"/>
+                                        </div>
                                     </div>
                                     <div v-else>
                                         <p class="noRefereeItem">جلسه دفاع فعالی وجود ندارد!</p>
@@ -43,10 +53,11 @@
                                     </p>
                                     <div class="row">
                                         <div class="col-12 text-center">
-                                            <router-link to="/register/0" class="btn colorSet ml-4">
+                                            <button type="button" class="btn colorSet ml-4" data-toggle="modal"
+                                                    data-target="#presentTimeModal" dir="rtl">
                                                 <i class="fas fa-edit"></i>
                                                 <span class="mr-2">ویرایش زمان حضور</span>
-                                            </router-link>
+                                            </button>
                                             <router-link to="/AppointReferee" class="btn colorSet ml-4">
                                                 <i class="fas fa-user-plus"></i>
                                                 <span class="mr-2">انتخاب داوران</span>
@@ -63,6 +74,23 @@
                 <student-slider/>
             </div>
         </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="presentTimeModal" role="dialog">
+            <div class="row p-0 modal-dialog modal-lg  modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-body centerItem row container1">
+                        <VueCtkDateTimePicker locale="fa" inline="true" v-model="dateList"/>
+                    </div>
+                    <button type="button" class="btn btn-default mb-3" data-dismiss="modal" dir="rtl">
+                        <span class="mr-2 ml-2">بازگشت</span>
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+
+                </div>
+            </div>
+        </div>
+
     </div>
 </template>
 
@@ -74,6 +102,11 @@
     import refereeItemLayout from "../components/MasterRefereeItemLayout";
     import studentSlider from "../components/StudentSlider";
 
+    import VueCtkDateTimePicker from 'vue-ctk-date-time-picker';
+    import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css';
+
+    Vue.component('VueCtkDateTimePicker', VueCtkDateTimePicker);
+
     Vue.component("sliderLayout", SliderLayout);
     Vue.component("refereeItemLayout", refereeItemLayout);
     Vue.component("studentSlider", studentSlider);
@@ -83,9 +116,10 @@
         name: "Home",
         data() {
             return {
-                refereeList: ["sd"],
+                refereeList: ["sd", "", ""],
                 parameters: 0,
-                sliderArrayData: ["پیام شماره 1", "پیام شماره 2", "پیام شماره 3", "چهارمی"]
+                sliderArrayData: ["پیام شماره 1", "پیام شماره 2", "پیام شماره 3", "چهارمی"],
+                dateList: "2018-04-16 20:26"
             };
         },
         methods: {
@@ -155,6 +189,13 @@
     .inlineMode {
         float: right;
         clear: left;
+        margin-bottom: 3px;
+    }
+
+    .inlineModeLeft {
+        direction: ltr;
+        position: absolute;
+        left: 10px;
         margin-bottom: 3px;
     }
 

@@ -17,9 +17,11 @@
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.11",
     "vue-carousel": "^0.18.0",
+    "vue-ctk-date-time-picker": "^2.5.0",
     "vue-router": "^3.1.5",
     "vue-stepper": "^1.4.2",
     "vue2-editor": "^2.10.2",
+    "vuejs-datepicker": "^1.6.2",
     "vuelidate": "^0.7.5",
     "vuetify": "^2.2.11",
     "vuex": "^3.4.0"

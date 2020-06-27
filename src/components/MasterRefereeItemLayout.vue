@@ -6,7 +6,9 @@
         </div>
         <div class="col-5">
             <p class="row centerItem container1 mb-2 small">جلسه دفاع حضوری</p>
-            <div class="btn btn-primary row centerItem container1  small">شروع داوری</div>
+            <router-link to="/SendRefereeManagerPage" class="btn btn-primary row centerItem container1 small">
+                <span>شروع داوری</span>
+            </router-link>
         </div>
     </div>
 </template>
