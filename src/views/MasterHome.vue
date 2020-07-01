@@ -79,14 +79,36 @@
         <div class="modal fade" id="presentTimeModal" role="dialog">
             <div class="row p-0 modal-dialog modal-lg  modal-dialog-centered">
                 <div class="modal-content">
-                    <div class="modal-body centerItem row container1">
-                        <VueCtkDateTimePicker locale="fa" inline="true" v-model="dateList"/>
+                    <div class="modal-header" dir="rtl">
+                        ویرایش زمان حضور
                     </div>
-                    <button type="button" class="btn btn-default mb-3" data-dismiss="modal" dir="rtl">
-                        <span class="mr-2 ml-2">بازگشت</span>
-                        <i class="fas fa-arrow-left"></i>
-                    </button>
+                    <div class="modal-body centerItem row container1">
+                        <master-timing-table/>
+                        <div dir="rtl" class="w-100 mt-4">
+                            <div dir="rtl" class="clearBoth helpRow centerVert">
+                                <p class="littleCircle filled float-right mr-5"/>
+                                <p class="float-right mr-2">
+                                    ساعات آزاد شما
+                                </p>
+                            </div>
+                            <div dir="rtl" class="clearBoth helpRow centerVert">
+                                <p class="littleCircle unfilled float-right mr-5"/>
+                                <p class="float-right mr-2">
+                                    ساعات پر شما
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
 
+                        <button type="button" class="btn btn-default mb-3 mr-2 ml-2" data-dismiss="modal" dir="rtl">
+                            <span class="mr-2 ml-2">بازگشت</span>
+                            <span class="fas fa-arrow-left"/>
+                        </button>
+                        <button type="button" class="btn btn-info mb-3 mr-2 ml-2" dir="rtl">
+                            <span class="mr-2 ml-2">ثبت تغییرات</span>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -101,7 +123,7 @@
     import SliderLayout from "../components/SliderLayout";
     import refereeItemLayout from "../components/MasterRefereeItemLayout";
     import studentSlider from "../components/StudentSlider";
-
+    import masterTimingTable from "../components/MasterTimingTableComp";
     import VueCtkDateTimePicker from 'vue-ctk-date-time-picker';
     import 'vue-ctk-date-time-picker/dist/vue-ctk-date-time-picker.css';
 
@@ -110,6 +132,7 @@
     Vue.component("sliderLayout", SliderLayout);
     Vue.component("refereeItemLayout", refereeItemLayout);
     Vue.component("studentSlider", studentSlider);
+    Vue.component("masterTimingTable", masterTimingTable);
 
 
     export default {
@@ -206,4 +229,40 @@
         height: 150px;
     }
 
+    .littleCircle {
+        width: 14px;
+        height: 14px;
+        border-radius: 7px;
+    }
+
+    .filled {
+        background-color: #0099cb;
+        border: 1px solid #aaa;
+    }
+
+    .unfilled {
+        background-color: white;
+        border: 1px solid #aaa;
+    }
+
+    .displayInline {
+        display: inline;
+
+    }
+
+    .displayInlineBlock {
+        display: inline-block;
+    }
+
+    .clearBoth {
+        clear: both;
+    }
+
+    .centerVert {
+        display: flex;
+        align-items: center;
+        text-align: right;
+        padding: 0;
+
+    }
 </style>

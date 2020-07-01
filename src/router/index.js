@@ -13,7 +13,7 @@ import RefereeResults from "../views/RefereeResults";
 import Masters from "../views/Masters";
 import ToDoPage from "../views/ToDoPage";
 import MasterHome from "../views/MasterHome";
-import StudentItemLayout from "../components/RefereeProposalItem";
+import TimingTable from "../components/MasterTimingTableComp";
 import navStudents from "../views/NavStudents";
 import navReferee from "../views/AppointReferees";
 import navReferee1 from "../views/NavReferee";
@@ -215,8 +215,8 @@ const routes = [{
     },
     {
         path: '/temp2',
-        name: 'MasterReferee',
-        component: StudentItemLayout,
+        name: 'TimingTb',
+        component: TimingTable,
         // beforeEnter: (to, from, next) => {
         //     if (store.state.user.token) {
         //         next()
