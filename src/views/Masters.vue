@@ -27,40 +27,40 @@
             return {
                 items: [
                     {
-                        name: "دکتر مجتبی ترابی",
-                        duty: "استاد راهنما",
-                        degree: "استادیار",
-                        field: "هوش مصنوعی",
-                        phone: "(021)29903456",
-                        email: "Mojtaba26.t@gmail.com",
-                        time: "شنبه و سه شنبه ساعت 14 تا 15"
+                        name: "دکتر علیرضا شاملی سندی",
+                        duty: "مدیر گروه",
+                        degree: "دانشیار",
+                        field: "نرم‌افزار",
+                        phone: "(021)299032456",
+                        email: "a.shameli@sbu.ac.ir",
+                        time: " همه روزه ساعت ۹ تا ۱۷"
                     },
                     {
-                        name: "دکتر مجتبی ترابی",
+                        name: "دکتر حسن حقیقی",
                         duty: "استاد راهنما",
-                        degree: "استادیار",
-                        field: "هوش مصنوعی",
-                        phone: "(021)29903456",
-                        email: "Mojtaba26.t@gmail.com",
-                        time: "شنبه و سه شنبه ساعت 14 تا 15"
+                        degree: "دانشیار",
+                        field: "نرم‌افزار",
+                        phone: "(021)2990342456",
+                        email: "haghighi@gmail.com",
+                        time: "سه شنبه ساعت ۱۳ تا ۱۶:۱۵"
                     },
                     {
-                        name: "دکتر مجتبی ترابی",
-                        duty: "استاد راهنما",
-                        degree: "استادیار",
-                        field: "هوش مصنوعی",
-                        phone: "(021)29903456",
-                        email: "Mojtaba26.t@gmail.com",
-                        time: "شنبه و سه شنبه ساعت 14 تا 15"
+                        name: "دکتر مجتبی وحیدی اصل",
+                        duty: "استاد داور اول",
+                        degree: "دانشیار",
+                        field: "نرم‌افزار",
+                        phone: "(021)2990352456",
+                        email: "m.vahidi@gmail.com",
+                        time: "یکشنبه و سه‌شنبه ساعت ۱۴ تا ۱۶:۳۰"
                     },
                     {
-                        name: "دکتر مجتبی ترابی",
-                        duty: "استاد راهنما",
-                        degree: "استادیار",
-                        field: "هوش مصنوعی",
-                        phone: "(021)29903456",
-                        email: "Mojtaba26.t@gmail.com",
-                        time: "شنبه و سه شنبه ساعت 14 تا 15"
+                        name: "دکتر رامک قوامی‌زاده",
+                        duty: "استاد داور دوم",
+                        degree: "دانشیار",
+                        field: "نرم افزار",
+                        phone: "(021)2990378456",
+                        email: "ghavamizade@gmail.com",
+                        time: "سه شنبه ساعت ۱۴ تا ۱۷"
                     }
 
                 ]

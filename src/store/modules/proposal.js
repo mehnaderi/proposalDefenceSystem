@@ -26,14 +26,16 @@ const state = {
     time_table: null,
 };
 
-// const getters = {
-//     // getTitle: state => {
-//     //     return state
-//     // },
-//     // getProposalInfo: state => {
-//     //     return state
-//     // }
-// };
+const getters = {
+    getTitle: state => {
+        // return state
+        if (state)
+        return "pouyaaaaaaa"
+    },
+    getProposalInfo: state => {
+        return state
+    }
+};
 
 const mutations = {
     setPreferedProf: (state, prof) => {
@@ -137,7 +139,7 @@ const actions = {
 
 export default {
     state,
-    // getters,
+    getters,
     mutations,
     actions
 }

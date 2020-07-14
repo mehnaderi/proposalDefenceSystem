@@ -62,17 +62,23 @@
             </router-link>
           </div>
           <div class="col-7 d-flex align-items-end flex-column">
-            <!-- <router-link to="/home" class="btn btn-primary">
+            <router-link to="/home" class="btn btn-primary">
               <small>پایان</small>
-            </router-link>-->
-            <button
+            </router-link>
+            <!-- <button
+              @click="onNext"
+              :class="notAllowed"
+              class="btn btn-primary"
+              :disabled="all_filled"
+            > -->
+            <!-- <button
               @click="onNext"
               :class="notAllowed"
               class="btn btn-primary"
               :disabled="all_filled"
             >
               <small>پایان</small>
-            </button>
+            </button> -->
           </div>
         </div>
       </div>

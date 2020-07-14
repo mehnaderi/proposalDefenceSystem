@@ -1,11 +1,13 @@
 <template>
   <div class="row">
-    <div v-if="false">
+    <!-- student -->
+    <div v-if="!this.$store.getters.isProf">
       <nav
-              class="navbar navbar-light bg-light navbar-expand-lg fixed-top font-weight-bold small shadow">
+        class="navbar navbar-light bg-light navbar-expand-lg fixed-top font-weight-bold small shadow"
+      >
         <a href="#" class="navbar-brand">
           <a class="navbar-brand" href="#">
-            <img src="../assets/logo.png" alt="Logo" style="width:40px;"/>
+            <img src="../assets/logo.png" alt="Logo" style="width:40px;" />
             <span class="pl-3">پروپوزال</span>
           </a>
         </a>
@@ -17,16 +19,16 @@
             <!-- Dropdown -->
             <li class="nav-item dropdown p-2">
               <a
-                      class="nav-link dropdown-toggle"
-                      dir="ltr"
-                      href="#"
-                      id="navbardrop"
-                      data-toggle="dropdown"
+                class="nav-link dropdown-toggle"
+                dir="ltr"
+                href="#"
+                id="navbardrop"
+                data-toggle="dropdown"
               >پویا محمدخانی</a>
               <div class="dropdown-menu text-right">
-                <router-link to="/" tag="a" class="dropdown-item">
+                <!-- <router-link to="/" tag="a" class="dropdown-item">
                   <i class="fas fa-user-edit p-1 small"></i>تنظیمات کاربری
-                </router-link>
+                </router-link>-->
                 <router-link to="/" tag="a" class="dropdown-item">
                   <span class="fas fa-sign-out-alt p-1 small"></span>خروج
                 </router-link>
@@ -59,10 +61,11 @@
     </div>
     <div v-else>
       <nav
-              class="navbar navbar-light bg-light navbar-expand-lg fixed-top font-weight-bold small shadow">
+        class="navbar navbar-light bg-light navbar-expand-lg fixed-top font-weight-bold small shadow"
+      >
         <a href="#" class="navbar-brand">
           <a class="navbar-brand" href="#">
-            <img src="../assets/logo.png" alt="Logo" style="width:40px;"/>
+            <img src="../assets/logo.png" alt="Logo" style="width:40px;" />
             <span class="pl-3">پروپوزال</span>
           </a>
         </a>
@@ -74,16 +77,16 @@
             <!-- Dropdown -->
             <li class="nav-item dropdown p-2">
               <a
-                      class="nav-link dropdown-toggle"
-                      dir="ltr"
-                      href="#"
-                      id="navbardropM"
-                      data-toggle="dropdown"
-              >پویا محمدخانی</a>
+                class="nav-link dropdown-toggle"
+                dir="ltr"
+                href="#"
+                id="navbardropM"
+                data-toggle="dropdown"
+              >{{this.$store.getters.getCurrentUser.name}}</a>
               <div class="dropdown-menu text-right">
-                <router-link to="/" tag="a" class="dropdown-item">
+                <!-- <router-link to="/" tag="a" class="dropdown-item">
                   <i class="fas fa-user-edit p-1 small"></i>تنظیمات کاربری
-                </router-link>
+                </router-link>-->
                 <router-link to="/" tag="a" class="dropdown-item">
                   <span class="fas fa-sign-out-alt p-1 small"></span>خروج
                 </router-link>
@@ -113,48 +116,51 @@
 </template>
 
 <style scoped>
-  #navbarCollapse > ul > li > a, #navbarCollapseM > ul > li > a {
-    color: rgb(0, 153, 204);
-  }
+#navbarCollapse > ul > li > a,
+#navbarCollapseM > ul > li > a {
+  color: rgb(0, 153, 204);
+}
 
-  .shadow {
-    box-shadow: 0 0.15rem 0.2rem rgba(0, 0, 0, 0.15) !important;
-  }
+.shadow {
+  box-shadow: 0 0.15rem 0.2rem rgba(0, 0, 0, 0.15) !important;
+}
 
-  .navItemInner {
-    color: black !important;
-    transition: color, background-color 100ms;
-    border-radius: 3px;
-  }
+.navItemInner {
+  color: black !important;
+  transition: color, background-color 100ms;
+  border-radius: 3px;
+}
 
-  #mainPage:hover, #mainPageM:hover,
-  #toDo:hover,
-  #mainPage:active, #mainPageM:active,
-  #toDo:active {
-    color: #0099cb !important;
-    transition: color 100ms;
-    background-color: #eeeeee;
-  }
+#mainPage:hover,
+#mainPageM:hover,
+#toDo:hover,
+#mainPage:active,
+#mainPageM:active,
+#toDo:active {
+  color: #0099cb !important;
+  transition: color 100ms;
+  background-color: #eeeeee;
+}
 
-  #refereeResult:hover,
-  #refereeResult:active,
-  #refereeing:hover,
-  #refereeing:active {
-    color: #ee711d !important;
-    transition: color, background-color 100ms;
-    background-color: #eeeeee;
-  }
+#refereeResult:hover,
+#refereeResult:active,
+#refereeing:hover,
+#refereeing:active {
+  color: #ee711d !important;
+  transition: color, background-color 100ms;
+  background-color: #eeeeee;
+}
 
-  #masters:hover,
-  #masters:active,
-  #students:hover,
-  #students:active {
-    color: #1cbabd !important;
-    transition: color, background-color 100ms;
-    background-color: #eeeeee;
-  }
+#masters:hover,
+#masters:active,
+#students:hover,
+#students:active {
+  color: #1cbabd !important;
+  transition: color, background-color 100ms;
+  background-color: #eeeeee;
+}
 
-  .sizeLarge {
-    font-size: 18px;
-  }
+.sizeLarge {
+  font-size: 18px;
+}
 </style>

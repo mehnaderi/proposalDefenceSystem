@@ -22,11 +22,12 @@ import SendRefereeManagerPage from "../views/SendRefereeManagerPage";
 
 Vue.use(VueRouter);
 
-const routes = [{
-    path: '/',
-    name: 'Start',
-    component: Start
-},
+const routes = [
+    {
+        path: '/',
+        name: 'Start',
+        component: Start
+    },
     {
         path: '/register/0',
         name: 'Form0',
@@ -169,6 +170,7 @@ const routes = [{
         path: '/AppointReferee',
         name: 'navReferee',
         component: navReferee,
+        // props: true,
         // beforeEnter: (to, from, next) => {
         //     if (store.state.user.token) {
         //         next()
@@ -190,9 +192,10 @@ const routes = [{
         // }
     },
     {
-        path: '/SendRefereePage',
+        path: '/SendRefereePage/:index',
         name: 'SendRefereePage',
         component: SendRefereePage,
+        props: true,
         // beforeEnter: (to, from, next) => {
         //     if (store.state.user.token) {
         //         next()
@@ -202,9 +205,10 @@ const routes = [{
         // }
     },
     {
-        path: '/SendRefereeManagerPage',
+        path: '/SendRefereeManagerPage/:index',
         name: 'SendRefereeManagerPage',
         component: SendRefereeManagerPage,
+        props: true,
         // beforeEnter: (to, from, next) => {
         //     if (store.state.user.token) {
         //         next()

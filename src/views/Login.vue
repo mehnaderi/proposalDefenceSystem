@@ -44,10 +44,15 @@
               </div>
             </div>
             <!-- اگه کاربر ثبت نام نکرده بود میره صفحه ثبت وگرنه میره صفحه خانه -->
-            <button
+            <!-- <button
                     class="btn btn-outline-secondary my-auto"
                     :disabled="$v.$error || !$v.email.required || !$v.password.required"
-            >ورود</button>
+            >ورود</button> -->
+
+            <!-- <router-link to="register/0" -->
+            <router-link to="Masterhome"
+                    class="btn btn-outline-secondary my-auto"
+            >ورود</router-link>
           </form>
         </div>
         <div class="col-12 pt-md-3 text-muted">
